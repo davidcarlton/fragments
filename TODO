@@ -1,0 +1,27 @@
+Distinguish between published and unpublished.
+* Timestamp for the former.
+
+RSS feed for published fragments.
+
+Transform fragments into HTML.
+* Both published and unpublished, though unpublished are not in default directory.
+* How to handle paragraphs?
+* Start from what?
+  + XML?
+  + Text / markdown?
+* .htaccess
+* index.html
+
+Mixes
+
+Types:
+* Sutras
+* Commentaries
+
+Styling
+* Including iPad, iPhone versions
+
+Font
+
+Questions:
+* Generate title from filename?
