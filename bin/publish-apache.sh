@@ -17,6 +17,7 @@ SOURCE_DIR=${SCRIPT_DIR}
 
 rm -rf ${STAGING_DIR}
 mkdir ${STAGING_DIR}
+touch ${STAGING_DIR}/index.html
 mkdir ${STAGING_DIR}/css
 cp css/*.css ${STAGING_DIR}/css
 cp config/dot.htaccess ${STAGING_DIR}/.htaccess
