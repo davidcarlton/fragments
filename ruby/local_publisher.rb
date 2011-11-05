@@ -10,4 +10,8 @@ class LocalPublisher < Publisher
       "../css/#{basename}.css"
     end
   end
+
+  def fragment_names
+    fragment_names_in "fragments"
+  end
 end

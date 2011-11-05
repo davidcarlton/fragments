@@ -1,9 +1,9 @@
 require 'fragment_writer'
 
 class Publisher
-  def initialize(source_dir, dest_dir, paths)
-    @fragment_source = "#{source_dir}/fragments"
-    @fragment_dest = "#{dest_dir}/fragments"
+  def initialize(source_root, dest_root, paths)
+    @source_root = source_root
+    @fragment_dest = "#{dest_root}/fragments"
     @writer = FragmentWriter.new(paths)
   end
 
@@ -11,12 +11,12 @@ class Publisher
     fragment_names.map { |fragment| publish_fragment(fragment) }
   end
 
-  def fragment_names
-    Dir.entries("#{@fragment_source}").reject { |filename| filename[0] == ?. }
+  def fragment_names_in(directory)
+    Dir.entries("#{@source_root}/#{directory}").reject { |filename| filename[0] == ?. }
   end
 
   def publish_fragment(filename)
-    File.open("#{@fragment_source}/#{filename}") do |contents|
+    File.open("#{@source_root}/fragments/#{filename}") do |contents|
       write_contents(filename, contents.read)
     end
   end

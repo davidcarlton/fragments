@@ -14,4 +14,8 @@ class ApachePublisher < Publisher
       "#{@base_url}/css/#{basename}.css"
     end
   end
+
+  def fragment_names
+    fragment_names_in "published"
+  end
 end
