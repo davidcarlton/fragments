@@ -32,3 +32,6 @@ Font
 
 Questions:
 * Generate title from filename?
+
+The specific redcarpet version I'm using:
+* gem install redcarpet -v 2.0.0b5
