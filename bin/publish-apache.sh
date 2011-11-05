@@ -3,7 +3,7 @@
 set -e
 
 if [ "$#" != "2" ]; then
-	echo "Usage: publish-apache.sh OUTPUT_DIR BASE_URL"
+  echo "Usage: publish-apache.sh OUTPUT_DIR BASE_URL"
 fi
 
 OUTPUT_DIR=$1
