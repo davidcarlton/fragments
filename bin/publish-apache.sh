@@ -4,6 +4,7 @@ set -e
 
 if [ "$#" != "2" ]; then
   echo "Usage: publish-apache.sh OUTPUT_DIR BASE_URL"
+  exit 1
 fi
 
 OUTPUT_DIR=$1
