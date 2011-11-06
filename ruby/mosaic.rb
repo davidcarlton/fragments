@@ -28,7 +28,7 @@ class Mosaic
     comments = []
     while (!rows.empty? && rows[0][0] == ?#)
       comment = rows.shift
-      comments.push(comment.slice(2, comment.length - 2))
+      comments.push(comment.slice(1, comment.length - 1).strip)
     end
 
     if (comments.empty?)
