@@ -16,6 +16,11 @@ class TestMosaic < Test::Unit::TestCase
     mosaic.map { |row| assert_nil(row.comments) }
   end
 
+  def test_whitespace
+    mosaic = Mosaic.new([" a", "b\n"])
+    assert_equal(["a", "b"], bodies(mosaic))
+  end
+
   def test_single_row_single_comment
     mosaic = Mosaic.new(["only", "* comment"])
     assert_equal(1, mosaic.size)

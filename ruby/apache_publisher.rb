@@ -16,6 +16,6 @@ class ApachePublisher < Publisher
   end
 
   def fragment_names
-    fragment_names_in "published"
+    names_in "published"
   end
 end

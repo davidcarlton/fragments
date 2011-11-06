@@ -12,6 +12,10 @@ class LocalPublisher < Publisher
   end
 
   def fragment_names
-    fragment_names_in "fragments"
+    names_in "fragments"
+  end
+
+  def mosaic_names
+    names_in "mosaics"
   end
 end

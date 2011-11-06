@@ -33,7 +33,7 @@ class Mosaic
   end
 
   def next_row(rows)
-    body = rows.shift
+    body = rows.shift.strip
     comments = []
     while (!rows.empty? && rows[0][0] == ?*)
       comment = rows.shift

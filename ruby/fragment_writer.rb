@@ -7,14 +7,14 @@ class FragmentWriter
     @paths = paths
     renderer = Redcarpet::Render::HTML.new
     @markdown = Redcarpet::Markdown.new(renderer)
-    @template = ERB.new(IO.read("templates/fragment.html.erb"))
+    @template = ERB.new(IO.read("templates/outer.html.erb"))
   end
 
   class Fragment
-    attr_reader :fragment_text, :paths
+    attr_reader :body_text, :paths
 
     def initialize(text, paths)
-      @fragment_text = text
+      @body_text = text
       @paths = paths
     end
 
