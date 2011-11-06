@@ -26,9 +26,9 @@ class Mosaic
   def next_row(rows)
     body = rows.shift
     comments = []
-    while (!rows.empty? && rows[0][0] == ?#)
+    while (!rows.empty? && rows[0][0] == ?*)
       comment = rows.shift
-      comments.push(comment.slice(1, comment.length - 1).strip)
+      comments.push(comment.slice(1, comment.length - 1).strip) 
     end
 
     if (comments.empty?)

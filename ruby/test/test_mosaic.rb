@@ -17,7 +17,7 @@ class TestMosaic < Test::Unit::TestCase
   end
 
   def test_single_row_single_comment
-    mosaic = Mosaic.new(["only", "# comment"])
+    mosaic = Mosaic.new(["only", "* comment"])
     assert_equal(1, mosaic.size)
     row = mosaic.row(0)
     assert_equal("only", row.body)
@@ -29,7 +29,7 @@ class TestMosaic < Test::Unit::TestCase
   end
 
   def test_single_row_multiple_comments
-    mosaic = Mosaic.new(["only", "# comment-1", "# comment-2", "# comment-3"])
+    mosaic = Mosaic.new(["only", "* comment-1", "* comment-2", "* comment-3"])
     assert_equal(1, mosaic.size)
     row = mosaic.row(0)
     assert_equal("only", row.body)
@@ -39,12 +39,12 @@ class TestMosaic < Test::Unit::TestCase
   end
 
   def test_varying_comment_whitespace
-    mosaic = Mosaic.new(["only", "#comment-1", "#  comment-2", "# comment-3\n"])
+    mosaic = Mosaic.new(["only", "*comment-1", "*  comment-2", "* comment-3\n"])
     assert_equal(["comment-1", "comment-2", "comment-3"], comment_bodies(mosaic.row(0)))
   end
 
   def test_multiple_rows_comments
-    mosaic = Mosaic.new(["1", "#1-1", "2", "#2-1", "#2-2", "3", "4", "#4-1"])
+    mosaic = Mosaic.new(["1", "*1-1", "2", "*2-1", "*2-2", "3", "4", "*4-1"])
     assert_equal(4, mosaic.size)
     assert_equal(["1-1"], comment_bodies(mosaic.row(0)))
     assert_equal(["2-1", "2-2"], comment_bodies(mosaic.row(1)))
@@ -53,7 +53,7 @@ class TestMosaic < Test::Unit::TestCase
   end
 
   def test_nested_comments
-    mosaic = Mosaic.new(["outer", "#middle-1", "##inner-1-1", "##inner-1-2", "#middle-2", "#middle-3", "##inner-3-1"])
+    mosaic = Mosaic.new(["outer", "*middle-1", "**inner-1-1", "**inner-1-2", "*middle-2", "*middle-3", "**inner-3-1"])
     comments = mosaic.row(0).comments
     assert_equal(3, comments.size)
     assert_equal(["inner-1-1", "inner-1-2"], comment_bodies(comments.row(0)))
