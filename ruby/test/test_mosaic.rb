@@ -2,14 +2,14 @@ require 'mosaic'
 require 'test/unit'
 
 class TestMosaic < Test::Unit::TestCase
-  def test_single_no_nesting
+  def test_single_no_comments
     mosaic = Mosaic.new(["only"])
     assert_equal(1, mosaic.size)
     assert_equal("only", mosaic.row(0).body)
     assert_nil(mosaic.row(0).comments)
   end
 
-  def test_multiple_no_nesting
+  def test_multiple_no_comments
     mosaic = Mosaic.new(["first", "second", "third"])
     assert_equal(3, mosaic.size)
     assert_equal(["first", "second", "third"], bodies(mosaic))
@@ -59,6 +59,21 @@ class TestMosaic < Test::Unit::TestCase
     assert_equal(["inner-1-1", "inner-1-2"], comment_bodies(comments.row(0)))
     assert_nil(comments.row(1).comments)
     assert_equal(["inner-3-1"], comment_bodies(comments.row(2)))
+  end
+
+  def test_all_fragments_no_comments
+    mosaic = Mosaic.new(["1", "2", "3"])
+    assert_equal(Set["1", "2", "3"], mosaic.all_fragments)
+  end
+
+  def test_all_fragments_comments
+    mosaic = Mosaic.new(["1", "*1-1", "*1-2", "2", "*2-1", "3"])
+    assert_equal(Set["1", "1-1", "1-2", "2", "2-1", "3"], mosaic.all_fragments)
+  end
+
+  def test_all_fragments_nested_comments
+    mosaic = Mosaic.new(["outer", "*middle", "**inner"])
+    assert_equal(Set["outer", "middle", "inner"], mosaic.all_fragments)
   end
 
   def bodies(mosaic)

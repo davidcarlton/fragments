@@ -1,4 +1,5 @@
 require 'mosaic_row'
+require 'set'
 
 class Mosaic
   include Enumerable
@@ -21,6 +22,14 @@ class Mosaic
 
   def row(i)
     @rows[i]
+  end
+
+  def all_fragments
+    fragments = Set.new(@rows.map { |row| row.body })
+    @rows.each do |row|
+      fragments.merge(row.comments.all_fragments) if (!row.comments.nil?)
+    end
+    fragments
   end
 
   def next_row(rows)
