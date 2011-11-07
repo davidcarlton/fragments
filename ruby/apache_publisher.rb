@@ -16,6 +16,10 @@ class ApachePublisher < Publisher
   end
 
   def fragment_names
-    names_in "published"
+    names_in "published/fragments"
+  end
+
+  def mosaic_names
+    names_in "published/mosaics"
   end
 end

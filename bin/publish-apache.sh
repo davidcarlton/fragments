@@ -24,6 +24,8 @@ cp css/*.css ${STAGING_DIR}/css
 cp config/dot.htaccess ${STAGING_DIR}/.htaccess
 mkdir ${STAGING_DIR}/fragments
 touch ${STAGING_DIR}/fragments/index.html
+mkdir ${STAGING_DIR}/mosaics
+touch ${STAGING_DIR}/mosaics/index.html
 
 ruby -I ${SCRIPT_DIR}/ruby -e "load 'apache_publisher.rb'; ApachePublisher.new('${SOURCE_DIR}', '${STAGING_DIR}', '${BASE_URL}').publish"
 
