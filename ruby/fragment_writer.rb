@@ -10,7 +10,7 @@ class FragmentWriter
     @template = ERB.new(IO.read("templates/outer.html.erb"))
   end
 
-  class Fragment
+  class FragmentContext
     attr_reader :body_text, :paths
 
     def initialize(text, paths)
@@ -24,7 +24,7 @@ class FragmentWriter
   end
 
   def write(fragment_markdown)
-    fragment = Fragment.new(@markdown.render(fragment_markdown), @paths)
+    fragment = FragmentContext.new(@markdown.render(fragment_markdown), @paths)
     @template.result(fragment.get_binding)
   end
 end

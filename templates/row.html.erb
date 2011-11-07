@@ -1,0 +1,10 @@
+<%= render_body %>
+<% if (!comments.nil?) %>
+<ul>
+<% comments.each do |comment| %>
+<li>
+<%= render_row(comment) %>
+</li>
+<% end %>
+</ul>
+<% end %>
