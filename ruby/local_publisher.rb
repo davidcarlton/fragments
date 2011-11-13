@@ -9,6 +9,14 @@ class LocalPublisher < Publisher
     def css(basename)
       "../css/#{basename}.css"
     end
+
+    def fragments
+      "../fragments/"
+    end
+
+    def fragment(fragment_name)
+      "../fragments/#{fragment_name}"
+    end
   end
 
   def fragment_names
@@ -17,5 +25,9 @@ class LocalPublisher < Publisher
 
   def mosaic_names
     names_in "mosaics"
+  end
+
+  def fragment_time(fragment_name)
+    File.new("fragments/#{fragment_name}").mtime
   end
 end

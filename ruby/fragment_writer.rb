@@ -24,7 +24,11 @@ class FragmentWriter
   end
 
   def write(fragment_markdown)
-    fragment = FragmentContext.new(@markdown.render(fragment_markdown), @paths)
+    fragment = FragmentContext.new(body(fragment_markdown), @paths)
     @template.result(fragment.get_binding)
+  end
+
+  def body(fragment_markdown)
+    @markdown.render(fragment_markdown)
   end
 end

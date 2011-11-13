@@ -14,5 +14,6 @@ mkdir ${DESTDIR}/css
 cp css/*.css ${DESTDIR}/css
 mkdir ${DESTDIR}/fragments
 mkdir ${DESTDIR}/mosaics
+mkdir ${DESTDIR}/feeds
 
 ruby -I ${SCRIPTDIR}/ruby -e "load 'local_publisher.rb'; LocalPublisher.new('${SOURCEDIR}', '${DESTDIR}').publish"
