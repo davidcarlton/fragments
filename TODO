@@ -1,37 +1,11 @@
-Distinguish between published and unpublished.
-* Timestamp for the former.
-
-RSS feed for published fragments.
-* And for mixes.
-
-Transform fragments into HTML.
-* Both published and unpublished, though unpublished are not in default directory and aren't pushed to the final site.
-* .htaccess
-* index.html
-* Relative or absolute links? (E.g. to css.)
-
-Mixes
-* Visual representation for separators between fragments?
-
-Types:
-* Sutras
-* Commentaries
-
 Styling
 * Including iPad, iPhone versions
 
 Front page
-
-Font
-* Baskerville
-* Didot?
-* American Typewriter? (Or Courier...)
-* Cochin?
-* Palatino?
-* Times New Roman?
 
 Questions:
 * Generate title from filename?
 
 The specific redcarpet version I'm using:
 * gem install redcarpet -v 2.0.0b5
+* I'm also using the atom-tools gem

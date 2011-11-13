@@ -68,4 +68,8 @@ class MosaicWriter
     body = MosaicContext.new(mosaic, @paths, @fragments, @markdown, @row)
     @outer.result(body.get_binding)
   end
+
+  def body(mosaic)
+    MosaicContext.new(mosaic, @paths, @fragments, @markdown, @row).body_text
+  end
 end

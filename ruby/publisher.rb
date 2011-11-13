@@ -16,6 +16,7 @@ class Publisher
     fragment_names.map { |fragment| publish_fragment(fragment) }
     mosaic_names.map { |mosaic| publish_mosaic(mosaic) }
     publish_fragments_feed
+    publish_mosaics_feed
   end
 
   def fragments_map
@@ -50,10 +51,21 @@ class Publisher
     fragment_names.each do |fragment_name|
       feed_writer.add(fragment_name,
         @fragment_writer.body(fragment_text(fragment_name)),
-        fragment_time(fragment_name))
+        publication_time("fragments/#{fragment_name}"))
     end
 
     publish_to("feeds/fragments.xml", feed_writer.write)
+  end
+
+  def publish_mosaics_feed
+    feed_writer = FeedWriter.new("mosaics", @paths)
+    mosaic_names.each do |mosaic_name|
+      feed_writer.add(mosaic_name,
+        @mosaic_writer.body(mosaic(mosaic_name)),
+        publication_time("mosaics/#{mosaic_name}"))
+    end
+
+    publish_to("feeds/mosaics.xml", feed_writer.write)
   end
 
   def publish_to(location, contents)

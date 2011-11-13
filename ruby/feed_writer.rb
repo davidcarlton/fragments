@@ -13,7 +13,7 @@ class FeedWriter
   def add(name, text, timestamp)
     entry = Atom::Entry.new
 
-    add_id_link(entry, @paths.fragment(name))
+    add_id_link(entry, @paths.item_name(@title, name))
     entry.content = text
     entry.content.type = "html"
     entry.updated = timestamp
@@ -30,10 +30,10 @@ class FeedWriter
     author.name = "David Carlton"
     feed.authors << author
 
-    add_id_link(feed, @paths.fragments)
+    add_id_link(feed, @paths.directory_name(@title))
 
     self_link = Atom::Link.new
-    self_link.href = @paths.feed("fragments")
+    self_link.href = @paths.feed(@title)
     self_link.rel = "self"
     self_link.type = "application/atom+xml"
     feed.links << self_link

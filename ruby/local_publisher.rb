@@ -10,12 +10,12 @@ class LocalPublisher < Publisher
       "../css/#{basename}.css"
     end
 
-    def fragments
-      "../fragments/"
+    def directory_name(collection)
+      "../#{collection}/"
     end
 
-    def fragment(fragment_name)
-      "../fragments/#{fragment_name}"
+    def item_name(collection, item)
+      "../#{collection}/#{item}"
     end
 
     def feed(feed_name)
@@ -31,7 +31,7 @@ class LocalPublisher < Publisher
     names_in "mosaics"
   end
 
-  def fragment_time(fragment_name)
-    File.new("fragments/#{fragment_name}").mtime
+  def publication_time(item_location)
+    File.new(item_location).mtime
   end
 end

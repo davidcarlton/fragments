@@ -15,12 +15,16 @@ class ApachePublisher < Publisher
       "#{@base_url}/css/#{basename}.css"
     end
 
-    def fragments
-      "#{@base_url}/fragments/"
+    def directory_name(collection)
+      "#{@base_url}/#{collection}/"
     end
 
-    def fragment(fragment_name)
-      "#{@base_url}/#{fragment_name}"
+    def item_name(collection, item)
+      if (collection == "fragments")
+        "#{@base_url}/#{item}"
+      else
+        "#{@base_url}/#{collection}/#{item}"
+      end
     end
 
     def feed(feed_name)
@@ -36,7 +40,7 @@ class ApachePublisher < Publisher
     names_in "published/mosaics"
   end
 
-  def fragment_time(fragment_name)
-    DateTime.parse(IO.read("published/fragments/#{fragment_name}"))
+  def publication_time(item_location)
+    DateTime.parse(IO.read("published/#{item_location}"))
   end
 end
