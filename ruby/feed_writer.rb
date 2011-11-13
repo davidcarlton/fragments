@@ -17,6 +17,7 @@ class FeedWriter
     entry.content = text
     entry.content.type = "html"
     entry.updated = timestamp
+    entry.title = name
 
     @entries << entry
   end
@@ -28,7 +29,15 @@ class FeedWriter
     author = Atom::Author.new
     author.name = "David Carlton"
     feed.authors << author
+
     add_id_link(feed, @paths.fragments)
+
+    self_link = Atom::Link.new
+    self_link.href = @paths.feed("fragments")
+    self_link.rel = "self"
+    self_link.type = "application/atom+xml"
+    feed.links << self_link
+     
     feed.updated = sorted_entries[0].updated
     sorted_entries.map { |entry| feed << entry }
     "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n#{feed.to_s}"

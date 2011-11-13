@@ -22,6 +22,10 @@ class ApachePublisher < Publisher
     def fragment(fragment_name)
       "#{@base_url}/#{fragment_name}"
     end
+
+    def feed(feed_name)
+      "#{@base_url}/#{feed_name}.xml"
+    end
   end
 
   def fragment_names

@@ -17,6 +17,10 @@ class LocalPublisher < Publisher
     def fragment(fragment_name)
       "../fragments/#{fragment_name}"
     end
+
+    def feed(feed_name)
+      "../feeds/#{feed_name}.xml"
+    end
   end
 
   def fragment_names
