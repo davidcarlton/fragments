@@ -6,3 +6,14 @@ body {
   margin: 200px auto;
   width: 700px;
 }
+
+body.medium {
+  margin: 100px;
+  width: auto;
+}
+
+body.small {
+  margin: 20px;
+  width: auto;
+  font-size: 13px;
+}

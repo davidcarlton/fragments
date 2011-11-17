@@ -1,13 +1,8 @@
 $(document).ready(function() {
-  var width = $(window).width()
-  if (width < 1050) {
-    var body = $("body")
-    body.width("auto")
-    if (width < 500) {
-      body.css("margin", "20px")
-      body.css("fontSize", "13px")
-    } else {
-      body.css("margin", "100px")        
-    }
+  var width = $(window).width();
+  if (width < 500) {
+    $("body").addClass("small");
+  } else if (width < 1050) {
+    $("body").addClass("medium");
   }
 })
