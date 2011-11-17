@@ -5,7 +5,7 @@ $(document).ready(function() {
     body.width("auto")
     if (width < 500) {
       body.css("margin", "20px")
-      body.css("fontSize", "16px")
+      body.css("fontSize", "13px")
     } else {
       body.css("margin", "100px")        
     }
