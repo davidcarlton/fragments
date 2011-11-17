@@ -12,6 +12,8 @@ rm -rf ${DESTDIR}
 mkdir ${DESTDIR}
 mkdir ${DESTDIR}/css
 cp css/*.css ${DESTDIR}/css
+mkdir ${DESTDIR}/js
+cp js/*.js ${DESTDIR}/js
 mkdir ${DESTDIR}/fragments
 mkdir ${DESTDIR}/mosaics
 mkdir ${DESTDIR}/feeds

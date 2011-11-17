@@ -15,6 +15,10 @@ class ApachePublisher < Publisher
       "#{@base_url}/css/#{basename}.css"
     end
 
+    def js(basename)
+      "#{@base_url}/js/#{basename}.js"
+    end
+
     def directory_name(collection)
       "#{@base_url}/#{collection}/"
     end

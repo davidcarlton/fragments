@@ -10,6 +10,10 @@ class LocalPublisher < Publisher
       "../css/#{basename}.css"
     end
 
+    def js(basename)
+      "../js/#{basename}.js"
+    end
+
     def directory_name(collection)
       "../#{collection}/"
     end

@@ -21,6 +21,8 @@ mkdir ${STAGING_DIR}
 touch ${STAGING_DIR}/index.html
 mkdir ${STAGING_DIR}/css
 cp css/*.css ${STAGING_DIR}/css
+mkdir ${STAGING_DIR}/js
+cp js/*.js ${STAGING_DIR}/js
 cp config/dot.htaccess ${STAGING_DIR}/.htaccess
 mkdir ${STAGING_DIR}/fragments
 touch ${STAGING_DIR}/fragments/index.html
