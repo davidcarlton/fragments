@@ -10,13 +10,10 @@ fi
 # fragments/name-of-fragment or mosaics/name-of-mosaic
 ITEM_NAME=$1
 
-cd $(dirname $0)/..
-# FIXME (2011-11-05, carlton): Make this parameterizable.
-SOURCE_DIR=${PWD}
-
-if [ ! -e "${SOURCE_DIR}/${ITEM_NAME}" ]; then
+if [ ! -e "${FRAGMENTS_TEXT}/${ITEM_NAME}" ]; then
   echo "Item ${ITEM_NAME} does not exist."
   exit 1
 fi
 
-date -u "+%Y-%m-%dT%H:%M:%SZ" > ${SOURCE_DIR}/published/${ITEM_NAME}
+mkdir -p ${FRAGMENTS_TEXT}/published
+date -u "+%Y-%m-%dT%H:%M:%SZ" > ${FRAGMENTS_TEXT}/published/${ITEM_NAME}
