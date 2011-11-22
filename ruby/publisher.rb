@@ -12,6 +12,8 @@ class Publisher
     @mosaic_writer = MosaicWriter.new(paths, fragments_map)
   end
 
+  attr_reader :source_root
+
   def publish
     fragment_names.map { |fragment| publish_fragment(fragment) }
     mosaic_names.map { |mosaic| publish_mosaic(mosaic) }

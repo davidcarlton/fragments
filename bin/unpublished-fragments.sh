@@ -2,7 +2,7 @@
 
 set -e
 
-cd $(dirname $0)/..
+cd ${FRAGMENTS_TEXT}
 
 ls published/fragments > /tmp/published-fragments
 ls fragments > /tmp/all-fragments

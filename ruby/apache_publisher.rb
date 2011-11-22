@@ -45,6 +45,6 @@ class ApachePublisher < Publisher
   end
 
   def publication_time(item_location)
-    DateTime.parse(IO.read("published/#{item_location}"))
+    DateTime.parse(IO.read("#{source_root}/published/#{item_location}"))
   end
 end

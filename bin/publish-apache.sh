@@ -13,8 +13,6 @@ BASE_URL=$2
 cd $(dirname $0)/..
 SCRIPT_DIR=${PWD}
 STAGING_DIR=/tmp/fragments-apache
-# FIXME (2011-11-05, carlton): Make this parameterizable.
-SOURCE_DIR=${SCRIPT_DIR}
 
 rm -rf ${STAGING_DIR}
 mkdir ${STAGING_DIR}
@@ -31,7 +29,7 @@ touch ${STAGING_DIR}/mosaics/index.html
 mkdir ${STAGING_DIR}/feeds
 touch ${STAGING_DIR}/feeds/index.html
 
-ruby -I ${SCRIPT_DIR}/ruby -e "load 'apache_publisher.rb'; ApachePublisher.new('${SOURCE_DIR}', '${STAGING_DIR}', '${BASE_URL}').publish"
+ruby -I ${SCRIPT_DIR}/ruby -e "load 'apache_publisher.rb'; ApachePublisher.new('${FRAGMENTS_TEXT}', '${STAGING_DIR}', '${BASE_URL}').publish"
 
 mkdir -p ${OUTPUT_DIR}
 

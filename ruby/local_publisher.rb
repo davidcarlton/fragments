@@ -36,6 +36,6 @@ class LocalPublisher < Publisher
   end
 
   def publication_time(item_location)
-    File.new(item_location).mtime
+    File.new("#{source_root}/#{item_location}").mtime
   end
 end
