@@ -1,6 +1,6 @@
 RewriteEngine On
 RewriteBase /
 RewriteRule ^([-a-zA-Z]+)$ fragments/$1.html
-RewriteRule ^mosaics/([-a-zA-Z]+)$ mosaics/$1.html
+RewriteRule ^mosaics/([-0-9a-zA-Z]+)$ mosaics/$1.html
 RewriteRule ^(fragments.xml)$ feeds/$1
 RewriteRule ^(mosaics.xml)$ feeds/$1
