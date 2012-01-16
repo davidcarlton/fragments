@@ -1,13 +1,9 @@
-require 'erb'
-require 'rubygems'
-require 'redcarpet'
+require 'writer'
 
-class FragmentWriter
+class FragmentWriter < Writer
   def initialize(paths)
-    @paths = paths
-    renderer = Redcarpet::Render::HTML.new
-    @markdown = Redcarpet::Markdown.new(renderer)
-    @template = ERB.new(IO.read("templates/outer.html.erb"))
+    super
+    @template = template("outer")
   end
 
   class FragmentContext
@@ -24,11 +20,11 @@ class FragmentWriter
   end
 
   def write(fragment_markdown)
-    fragment = FragmentContext.new(body(fragment_markdown), @paths)
+    fragment = FragmentContext.new(body(fragment_markdown), paths)
     @template.result(fragment.get_binding)
   end
 
   def body(fragment_markdown)
-    @markdown.render(fragment_markdown)
+    markdown.render(fragment_markdown)
   end
 end

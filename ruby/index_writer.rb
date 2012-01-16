@@ -1,13 +1,9 @@
-require 'erb'
-require 'rubygems'
-require 'redcarpet'
+require 'writer'
 
-class IndexWriter
+class IndexWriter < Writer
   def initialize(paths)
-    @paths = paths
-    renderer = Redcarpet::Render::HTML.new
-    @markdown = Redcarpet::Markdown.new(renderer)
-    @template = ERB.new(IO.read("templates/index.html.erb"))
+    super
+    @template = template("index")
     @entries = Set.new
   end
 
@@ -52,7 +48,7 @@ class IndexWriter
   end
 
   def write
-    fragment = IndexContext.new(fragments, @paths, @markdown)
+    fragment = IndexContext.new(fragments, paths, markdown)
     @template.result(fragment.get_binding)
   end
 end

@@ -1,15 +1,11 @@
-require 'erb'
-require 'rubygems'
-require 'redcarpet'
+require 'writer'
 
-class MosaicWriter
+class MosaicWriter < Writer
   def initialize(paths, fragments)
-    @paths = paths
+    super(paths)
     @fragments = fragments
-    renderer = Redcarpet::Render::HTML.new
-    @markdown = Redcarpet::Markdown.new(renderer)
-    @outer = ERB.new(IO.read("templates/outer.html.erb"))
-    @row = ERB.new(IO.read("templates/row.html.erb"))
+    @outer = template("outer")
+    @row = template("row")
   end
 
   class Context
@@ -65,11 +61,11 @@ class MosaicWriter
   end
 
   def write(mosaic)
-    body = MosaicContext.new(mosaic, @paths, @fragments, @markdown, @row)
+    body = MosaicContext.new(mosaic, paths, @fragments, markdown, @row)
     @outer.result(body.get_binding)
   end
 
   def body(mosaic)
-    MosaicContext.new(mosaic, @paths, @fragments, @markdown, @row).body_text
+    MosaicContext.new(mosaic, paths, @fragments, markdown, @row).body_text
   end
 end
