@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns='http://www.w3.org/2005/Atom'><id>http://base-url.org/fragments/</id><title type='text'>Malvasian Fragments: fragments</title><updated>2012-01-15T21:21:23-08:00</updated><link href='http://base-url.org/fragments/' rel='alternate' type='text/html'/><link href='http://base-url.org/fragments.xml' rel='self' type='application/atom+xml'/><author><name>David Carlton</name></author><entry><id>http://base-url.org/second</id><title type='text'>second</title><content type='html'>&lt;p&gt;A second fragment.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;With&lt;/li&gt;
+&lt;li&gt;Bullet&lt;/li&gt;
+&lt;li&gt;Points!&lt;/li&gt;
+&lt;/ul&gt;
+</content><updated>2012-01-15T21:21:23-08:00</updated><link href='http://base-url.org/second' rel='alternate' type='text/html'/></entry><entry><id>http://base-url.org/first</id><title type='text'>first</title><content type='html'>&lt;p&gt;Simple fragment. With a &lt;em&gt;bit&lt;/em&gt; of formatting.&lt;/p&gt;
+
+&lt;p&gt;And another paragraph.&lt;/p&gt;
+</content><updated>2012-01-15T21:21:21-08:00</updated><link href='http://base-url.org/first' rel='alternate' type='text/html'/></entry></feed>

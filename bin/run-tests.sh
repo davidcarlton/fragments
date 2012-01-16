@@ -6,6 +6,9 @@ ALLTESTS=$(echo *-test.sh)
 
 FAILURES=0
 PASSES=0
+TEST_OUT_DIR=/tmp/fragments-test-out
+rm -rf ${TEST_OUT_DIR}
+mkdir ${TEST_OUT_DIR}
 
 run()
 {
@@ -15,7 +18,7 @@ run()
   printf "%-12s" "${TEST}:"
 
   STARTTIME=$(date +%s)
-  ./${FILE}
+  ./${FILE} &> ${TEST_OUT_DIR}/${TEST}.out
   STATUS=$?
   ENDTIME=$(date +%s)
   ELAPSED=$(expr ${ENDTIME} - ${STARTTIME})

@@ -1,0 +1,19 @@
+body {
+  font-family: Baskerville, "Times New Roman", Times, serif;
+  font-size: 32px;
+  background-color: #fff3e0;
+  color: black;
+  margin: 150px auto;
+  width: 700px;
+}
+
+body.medium {
+  margin: 100px;
+  width: auto;
+}
+
+body.small {
+  margin: 20px;
+  width: auto;
+  font-size: 13px;
+}
