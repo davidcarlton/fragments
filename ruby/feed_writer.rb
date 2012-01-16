@@ -25,7 +25,11 @@ class FeedWriter
   def write
     sorted_entries = @entries.sort { |a, b| b.updated <=> a.updated }.take(MaxEntries)
     feed = Atom::Feed.new
-    feed.title = "Malvasian Fragments: #{@title}"
+    if (@title == "fragments")
+      feed.title = "Malvasian Fragments"
+    else
+      feed.title = "Malvasian Fragments: #{@title}"
+    end
     author = Atom::Author.new
     author.name = "David Carlton"
     feed.authors << author

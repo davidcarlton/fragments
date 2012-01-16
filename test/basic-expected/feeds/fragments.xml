@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns='http://www.w3.org/2005/Atom'><id>http://base-url.org/fragments/</id><title type='text'>Malvasian Fragments: fragments</title><updated>2012-01-15T21:21:23-08:00</updated><link href='http://base-url.org/fragments/' rel='alternate' type='text/html'/><link href='http://base-url.org/fragments.xml' rel='self' type='application/atom+xml'/><author><name>David Carlton</name></author><entry><id>http://base-url.org/second</id><title type='text'>second</title><content type='html'>&lt;p&gt;A second fragment.&lt;/p&gt;
+<feed xmlns='http://www.w3.org/2005/Atom'><id>http://base-url.org/</id><title type='text'>Malvasian Fragments</title><updated>2012-01-15T21:21:23-08:00</updated><link href='http://base-url.org/' rel='alternate' type='text/html'/><link href='http://base-url.org/fragments.xml' rel='self' type='application/atom+xml'/><author><name>David Carlton</name></author><entry><id>http://base-url.org/second</id><title type='text'>second</title><content type='html'>&lt;p&gt;A second fragment.&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;With&lt;/li&gt;

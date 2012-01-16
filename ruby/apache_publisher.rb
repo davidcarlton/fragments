@@ -20,15 +20,15 @@ class ApachePublisher < Publisher
     end
 
     def directory_name(collection)
-      "#{@base_url}/#{collection}/"
+      if (collection == "fragments")
+        "#{@base_url}/"
+      else
+        "#{@base_url}/#{collection}/"
+      end
     end
 
     def item_path(collection, item)
-      if (collection == "fragments")
-        "#{@base_url}/#{item}"
-      else
-        "#{@base_url}/#{collection}/#{item}"
-      end
+      "#{directory_name(collection)}#{item}"
     end
 
     def feed(feed_name)
