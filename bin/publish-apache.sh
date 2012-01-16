@@ -16,7 +16,6 @@ STAGING_DIR=/tmp/fragments-apache
 
 rm -rf ${STAGING_DIR}
 mkdir ${STAGING_DIR}
-touch ${STAGING_DIR}/index.html
 mkdir ${STAGING_DIR}/css
 cp css/*.css ${STAGING_DIR}/css
 mkdir ${STAGING_DIR}/js

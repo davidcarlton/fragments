@@ -23,7 +23,7 @@ class ApachePublisher < Publisher
       "#{@base_url}/#{collection}/"
     end
 
-    def item_name(collection, item)
+    def item_path(collection, item)
       if (collection == "fragments")
         "#{@base_url}/#{item}"
       else

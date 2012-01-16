@@ -1,0 +1,17 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width; initial-scale=1.0;" />
+<link rel="stylesheet" type="text/css" href="<%= paths.css("fragments") %>"></link>
+<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="<%= paths.feed("fragments") %>" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+<script type="text/javascript" src="<%= paths.js("widths") %>"></script>
+</head>
+<body>
+<% fragments.each do |fragment| %>
+<h2><a href="<%= path fragment %>"><%= title fragment %></a></h2>
+<%= render_fragment fragment %>
+<hr />
+<% end %>
+<a href="<%= paths.feed("fragments") %>">RSS Feed</a>
+</body>
+</html>

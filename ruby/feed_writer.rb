@@ -13,7 +13,7 @@ class FeedWriter
   def add(name, text, timestamp)
     entry = Atom::Entry.new
 
-    add_id_link(entry, @paths.item_name(@title, name))
+    add_id_link(entry, @paths.item_path(@title, name))
     entry.content = text
     entry.content.type = "html"
     entry.updated = timestamp

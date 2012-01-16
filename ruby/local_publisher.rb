@@ -18,8 +18,8 @@ class LocalPublisher < Publisher
       "../#{collection}/"
     end
 
-    def item_name(collection, item)
-      "../#{collection}/#{item}"
+    def item_path(collection, item)
+      "../#{collection}/#{item}.html"
     end
 
     def feed(feed_name)

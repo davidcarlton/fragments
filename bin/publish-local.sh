@@ -17,3 +17,5 @@ mkdir ${DESTDIR}/mosaics
 mkdir ${DESTDIR}/feeds
 
 ruby -I ${SCRIPTDIR}/ruby -e "load 'local_publisher.rb'; LocalPublisher.new('${FRAGMENTS_TEXT}', '${DESTDIR}').publish"
+
+ln -s ${DESTDIR}/index.html ${DESTDIR}/fragments/

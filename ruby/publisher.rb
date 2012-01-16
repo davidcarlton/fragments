@@ -1,5 +1,6 @@
 require 'feed_writer'
 require 'fragment_writer'
+require 'index_writer'
 require 'mosaic_writer'
 require 'mosaic'
 
@@ -19,6 +20,7 @@ class Publisher
     mosaic_names.map { |mosaic| publish_mosaic(mosaic) }
     publish_fragments_feed
     publish_mosaics_feed
+    publish_index
   end
 
   def fragments_map
@@ -68,6 +70,17 @@ class Publisher
     end
 
     publish_to("feeds/mosaics.xml", feed_writer.write)
+  end
+
+  def publish_index
+    index_writer = IndexWriter.new(@paths)
+    fragment_names.each do |fragment_name|
+      index_writer.add(fragment_name,
+        @fragment_writer.body(fragment_text(fragment_name)),
+        publication_time("fragments/#{fragment_name}"))
+    end
+
+    publish_to("index.html", index_writer.write)
   end
 
   def publish_to(location, contents)
