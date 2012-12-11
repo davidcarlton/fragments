@@ -4,4 +4,4 @@ If anybody else cares enough to want to use it, let me know and I'll provide mor
 
 Right now, mosaics aren't supported as well as regular fragments: in particular, neither they nor their feed shows up on the front page.
 
-This depends on the `redcarpet` and `atom-tools` gems; for the former, you'll need a 2.x version, which (as of this writing) means that you'll need to explicitly specify a beta version.
+This depends on the `redcarpet` and `atom-tools` gems.
