@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns='http://www.w3.org/2005/Atom'><id>http://base-url.org/mosaics/</id><title type='text'>Malvasian Fragments: mosaics</title><updated>2012-01-16T05:21:35+00:00</updated><link href='http://base-url.org/mosaics/' rel='alternate' type='text/html'/><link href='http://base-url.org/mosaics.xml' rel='self' type='application/atom+xml'/><author><name>David Carlton</name></author><entry><id>http://base-url.org/mosaics/first-mosaic</id><title type='text'>first-mosaic</title><content type='html'>&lt;p&gt;Simple fragment. With a &lt;em&gt;bit&lt;/em&gt; of formatting.&lt;/p&gt;
+<feed xmlns='http://www.w3.org/2005/Atom'><id>http://base-url.org/mosaics/</id><title type='text'>Malvasian Fragments: mosaics</title><updated>2012-01-15T21:21:35-08:00</updated><link href='http://base-url.org/mosaics/' rel='alternate' type='text/html'/><link href='http://base-url.org/mosaics.xml' rel='self' type='application/atom+xml'/><author><name>David Carlton</name></author><entry><id>http://base-url.org/mosaics/first-mosaic</id><title type='text'>first-mosaic</title><content type='html'>&lt;p&gt;Simple fragment. With a &lt;em&gt;bit&lt;/em&gt; of formatting.&lt;/p&gt;
 
 &lt;p&gt;And another paragraph.&lt;/p&gt;
 
@@ -85,4 +85,4 @@
 &lt;/ul&gt;
 
 
-</content><updated>2012-01-16T05:21:35+00:00</updated><link href='http://base-url.org/mosaics/first-mosaic' rel='alternate' type='text/html'/></entry></feed>
+</content><updated>2012-01-15T21:21:35-08:00</updated><link href='http://base-url.org/mosaics/first-mosaic' rel='alternate' type='text/html'/></entry></feed>
