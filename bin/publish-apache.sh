@@ -23,8 +23,8 @@ cp js/*.js ${STAGING_DIR}/js
 cp config/dot.htaccess ${STAGING_DIR}/.htaccess
 mkdir ${STAGING_DIR}/fragments
 touch ${STAGING_DIR}/fragments/index.html
-mkdir ${STAGING_DIR}/mosaics
-touch ${STAGING_DIR}/mosaics/index.html
+#mkdir ${STAGING_DIR}/mosaics
+#touch ${STAGING_DIR}/mosaics/index.html
 mkdir ${STAGING_DIR}/feeds
 touch ${STAGING_DIR}/feeds/index.html
 

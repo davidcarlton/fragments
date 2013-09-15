@@ -17,9 +17,9 @@ class Publisher
 
   def publish
     fragment_names.map { |fragment| publish_fragment(fragment) }
-    mosaic_names.map { |mosaic| publish_mosaic(mosaic) }
+    #mosaic_names.map { |mosaic| publish_mosaic(mosaic) }
     publish_fragments_feed
-    publish_mosaics_feed
+    #publish_mosaics_feed
     publish_index
   end
 
