@@ -7,7 +7,7 @@ class IndexWriter < Writer
     @entries = Set.new
   end
 
-  MaxEntries = 20
+  MaxEntries = 5
 
   class IndexContext
     attr_reader :fragments, :paths
